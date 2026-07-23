@@ -85,8 +85,8 @@ function extractLeads(data: unknown, depth = 0): Lead[] {
 }
 
 export type ParseResult =
-  | { ok: true; leads: Lead[] }
-  | { ok: false; error: ParseError };
+  | { ok: true; leads: Lead[]; error?: undefined }
+  | { ok: false; error: ParseError; leads?: undefined };
 
 export function parseWebhookResponse(
   status: number,
